@@ -147,12 +147,6 @@
                     ]
                 },
                 {
-                    "name": "AMAZON.YesIntent",
-                    "samples": [
-
-                    ]
-                },
-                {
                     "name": "AMAZON.RepeatIntent",
                     "samples": [
                         "wiederholen",
