@@ -95,6 +95,14 @@
                     ]
                 },
                 {
+                    "name": "MoreHelpIntent",
+                    "slots": [],
+                    "samples": [
+                        "mehr hilfe",
+                        "mehr info"
+                    ]
+                },
+                {
                     "name": "AMAZON.StopIntent",
                     "samples": [
                         "stop",

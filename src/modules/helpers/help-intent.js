@@ -12,13 +12,12 @@ module.exports = app => {
       attrs: newAttrs
     };
   });
-  /*
+
   app.intent('MoreHelpIntent', () => {
     return {
       ssml: true,
       text: app.t('text'),
-      end: true,
+      end: true
     };
   });
-  */
 };

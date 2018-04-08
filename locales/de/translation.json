@@ -58,7 +58,7 @@
       "genau",
       "klingt gut"
     ],
-    "textLeasingYes": "<speak><say-as interpret-as=\"interjection\">super</say-as>! Ich habe einen Kurzlink für Sie erstellt und an Ihre Alexa App geschickt, mit dem Sie sich direkt ein Angebot für das eben berechnete Leasing anfordern können</speak>",
+    "textLeasingYes": "<speak><say-as interpret-as=\"interjection\">super</say-as>! Ich habe einen Kurzlink für Sie erstellt und an Ihre Alexa App geschickt, mit dem Sie sich direkt ein Angebot für das eben berechnete Leasing auf Leasingrechnen <say-as interpret-as=\"spell-out\">.at</say-as> anfordern können</speak>",
     "cardTitle": "Leasingrechnen.at",
     "cardContent": "{{response.text}} \n\nFordern Sie direkt ein Angebot an: {{response.url}}",
     "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>"
@@ -79,7 +79,15 @@
       "was",
       "hä"
     ],
-    "text": "<speak><say-as interpret-as=\"interjection\">aber sicher</say-as>. Beginnen Sie, indem Sie mir den Kaufpreis für Ihr Fahrzeug sagen, zum Beispiel <s>preis 25000</s>. Sie können Eigenmittel, Laufzeit und Restwert anpassen, indem Sie beispielsweise <s>restwert 52%</s>, <s>eigenmittel 2000 euro</s> oder <s>laufzeit 3 jahre</s> sagen</speak>"
+    "text": "<speak><say-as interpret-as=\"interjection\">aber sicher</say-as>. Beginnen Sie, indem Sie mir den Kaufpreis für Ihr Fahrzeug sagen, zum Beispiel <s>preis 25000</s>. Sie können Eigenmittel, Laufzeit und Restwert anpassen, indem Sie beispielsweise <s>restwert 52%</s>, <s>eigenmittel 2000 euro</s> oder <s>laufzeit 3 jahre</s> sagen. Sagen Sie jetzt den Kaufpreis Ihres Autos, oder <s>Mehr Hilfe</s></speak>"
+  },
+
+  "MoreHelpIntent": {
+    "utterances": [
+      "mehr hilfe",
+      "mehr info"
+    ],
+    "text": "<speak>Sie können <s>Wiederholen</s> sagen, um den letzten Satz nochmals zu hören, oder <s>Neu starten</s> um ein neues Leasing zu berechnen. Alle Berechnungen sind auch in Ihrer Alexa App oder auf Ihrem Echo Show sichtbar. Der Leasingrechner Skill ist ein Service von www.leasingrechnen.at</speak>"
   },
 
   "RepeatIntent": {
@@ -134,7 +142,7 @@
       "es kostet {price:Number} euro",
       "es kostet {price:Number}"
     ],
-    "text": "<speak><say-as interpret-as=\"interjection\">alles klar</say-as>, {{slots.price}} also. {{response.text}} Ist das so in Ordnung?</speak>",
+    "text": "<speak>Ok, {{slots.price}} also. {{response.text}} Ist das so in Ordnung?</speak>",
     "errorInputMissing": "Können Sie mir bitte nochmals den Kaufpreis sagen?",
     "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
     "cardTitle": "Leasingrechnen.at",
@@ -160,7 +168,7 @@
       "{capital:Number} kapital",
       "{capital:Number} kaution"
     ],
-    "text": "<speak><say-as interpret-as=\"interjection\">voila</say-as>, {{slots.capital}} Eigenmittel. {{response.text}} Ist das so in Ordnung?</speak>",
+    "text": "<speak>{{slots.capital}} Eigenmittel. {{response.text}} Ist das so in Ordnung?</speak>",
     "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
     "errorNoPrice": "<speak><say-as interpret-as=\"interjection\">huch</say-as>, können Sie mir bitte zuerst den Kaufpreis sagen?</speak>",
     "errorInputMissing": "Entschuldigen Sie, können Sie das bitte wiederholen?",
@@ -178,7 +186,7 @@
       "{time:Duration} dauer",
       "{time:Duration} laufzeit"
     ],
-    "text": "<speak><say-as interpret-as=\"interjection\">klar</say-as>, Laufzeit aktualisiert. {{response.text}} Sind Sie mit dem Ergebnis zufrieden?</speak>",
+    "text": "<speak>Laufzeit aktualisiert. {{response.text}} Sind Sie mit dem Ergebnis zufrieden?</speak>",
     "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
     "errorNoPrice": "<speak><say-as interpret-as=\"interjection\">huch</say-as>, können Sie mir bitte zuerst den Kaufpreis sagen?</speak>",
     "errorInputMissing": "Entschuldigen Sie, können Sie das bitte wiederholen?",
@@ -191,7 +199,7 @@
       "restwert {residual:Number} prozent",
       "{residual:Number} prozent restwert"
     ],
-    "text": "<speak><say-as interpret-as=\"interjection\">jawohl</say-as>, Neuer Restwert. {{response.text}} Ist das OK?</speak>",
+    "text": "<speak>Neuer Restwert. {{response.text}} Ist das OK?</speak>",
     "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
     "errorNoPrice": "<speak><say-as interpret-as=\"interjection\">huch</say-as>, können Sie mir bitte zuerst den Kaufpreis sagen?</speak>",
     "errorInputMissing": "Entschuldigen Sie, können Sie das bitte wiederholen?",
