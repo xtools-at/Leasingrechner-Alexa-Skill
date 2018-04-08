@@ -6,7 +6,7 @@
  */
 
 const alexia = require('alexia');
-const app = alexia.createApp();
+const app = alexia.createApp('Leasingrechner');
 const i18next = require('i18next');
 const FilesystemBackend = require('i18next-node-fs-backend');
 
@@ -15,13 +15,13 @@ i18next
   .use(FilesystemBackend)
   .init({
     // debug: true,
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: 'de',
+    fallbackLng: 'de',
     backend: {
       loadPath: 'locales/{{lng}}/{{ns}}.json' // Path is relative to your current working directory - change it accordingly
     },
-    preload: ['en', 'de'],
-    ns: ['translation', 'custom-slots'] // List all namespaces so they are preloaded at startup
+    preload: ['de'],
+    ns: ['translation'] // List all namespaces so they are preloaded at startup
   });
 
 app.setI18next(i18next);
@@ -31,14 +31,21 @@ app.setI18next(i18next);
  * Example invocation: 'Alexa, start <my-app-name>'
  */
 app.onStart(() => {
-  return app.t('text');
+  return {
+    text: app.t('text'),
+    ssml: true,
+    end: false
+  };
 });
 
 /**
  * Register callback to be executed when app is being terminated.
  */
 app.onEnd(() => {
-  return app.t('text');
+  return {
+    text: app.t('text'),
+    ssml: true,
+  };
 });
 
 // Register all intents matching specified pattern

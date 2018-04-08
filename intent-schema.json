@@ -1,0 +1,184 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "leasing rechner",
+            "intents": [
+                {
+                    "name": "CalculateQuick",
+                    "slots": [
+                        {
+                            "name": "price",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "preis {price} euro",
+                        "preis {price}",
+                        "kaufpreis {price} euro",
+                        "kaufpreis {price}",
+                        "{price} euro",
+                        "{price}",
+                        "{price} euro preis",
+                        "{price} preis",
+                        "{price} euro kaufpreis",
+                        "{price} kaufpreis",
+                        "nach preis {price} euro",
+                        "nach preis {price}",
+                        "nach kaufpreis {price} euro",
+                        "nach kaufpreis {price}",
+                        "nach {price} euro",
+                        "nach {price}",
+                        "nach {price} euro preis",
+                        "nach {price} preis",
+                        "nach {price} euro kaufpreis",
+                        "nach {price} kaufpreis",
+                        "es kostet {price} euro",
+                        "es kostet {price}"
+                    ]
+                },
+                {
+                    "name": "AdjustCapital",
+                    "slots": [
+                        {
+                            "name": "capital",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "eigenmittel {capital} euro",
+                        "eigenkapital {capital} euro",
+                        "kapital {capital} euro",
+                        "kaution {capital} euro",
+                        "eigenmittel {capital}",
+                        "eigenkapital {capital}",
+                        "kapital {capital}",
+                        "kaution {capital}",
+                        "{capital} euro eigenmittel",
+                        "{capital} euro eigenkapital",
+                        "{capital} euro kapital",
+                        "{capital} euro kaution",
+                        "{capital} eigenmittel",
+                        "{capital} eigenkapital",
+                        "{capital} kapital",
+                        "{capital} kaution"
+                    ]
+                },
+                {
+                    "name": "AdjustTime",
+                    "slots": [
+                        {
+                            "name": "time",
+                            "type": "AMAZON.DURATION"
+                        }
+                    ],
+                    "samples": [
+                        "dauer {time}",
+                        "laufzeit {time}",
+                        "für {time}",
+                        "leasingdauer {time}",
+                        "{time}",
+                        "{time} dauer",
+                        "{time} laufzeit"
+                    ]
+                },
+                {
+                    "name": "AdjustResidualPercent",
+                    "slots": [
+                        {
+                            "name": "residual",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "restwert {residual} prozent",
+                        "{residual} prozent restwert"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "stop",
+                        "halt",
+                        "ausschalten",
+                        "hör endlich auf",
+                        "aufhören"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "abbrechen",
+                        "cancel",
+                        "vergiss es"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": [
+                        "nein",
+                        "nein danke",
+                        "no",
+                        "nope",
+                        "eher nicht",
+                        "eher nein",
+                        "ich denke nicht",
+                        "ich bin nicht einverstanden",
+                        "kein interesse",
+                        "eigentlich nicht"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "ja",
+                        "ja bitte",
+                        "yes",
+                        "ok",
+                        "okay",
+                        "jep",
+                        "natürlich",
+                        "klar",
+                        "passt",
+                        "bestätigen",
+                        "einverstanden",
+                        "das ist richtig",
+                        "genau",
+                        "klingt gut"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": [
+                        "wiederholen",
+                        "wiederholung",
+                        "nochmal",
+                        "sag das nochmal",
+                        "nochmals",
+                        "sag das nochmals",
+                        "wie bitte",
+                        "wiederhol das"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StartOverIntent",
+                    "samples": [
+                        "neustart",
+                        "von vorne",
+                        "neu beginnen",
+                        "alles löschen",
+                        "alles neu",
+                        "neu starten",
+                        "von vorne beginnen"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}

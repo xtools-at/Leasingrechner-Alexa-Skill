@@ -1,31 +1,201 @@
 {
   "LaunchRequest": {
-    "text": "Wilkommen bei Alexia Starter Kit"
+    "text": "<speak>Sagen Sie mir den Kaufpreis für Ihr Auto und ich berechne Ihnen die monatliche Leasingrate.</speak>"
   },
   "SessionEndedRequest": {
-    "text": "Auf Wiedersehen von Alexia Starter Kit"
+    "text": "<speak><say-as interpret-as=\"interjection\">bis bald</say-as>.</speak>"
   },
   "DefaultActionFail": {
-    "text": "Ihr Anweisung ist ungültig"
+    "text": "Entschuldigung, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals"
   },
-  "HelloIntent": {
-    "utterances": "hallo",
-    "text": "Hallo"
-  },
-  "SearchIntent": {
+  "CancelIntent": {
     "utterances": [
-      "Suche nach {item:Item}",
-      "Was ist {item:Item}",
-      "Beschreiben {item:Item}"
+      "abbrechen",
+      "cancel",
+      "vergiss es"
     ],
-    "text": "{{slots.item}} ist {{result}}",
-    "text_error1": "Ich habe Ihre Suchbegriffe nicht verstanden",
-    "text_error2": "Keine Übereinstimmung für {{item}} gefunden",
-    "dictionary": {
-      "Auto": "ein meist geschlossenes Fahrzeug, das gewöhnlich vier Räder hat, von einem Motor angetrieben wird und besonders zur Beförderung von Personen dient",
-      "Fahrrad": "ein Fahrzeug, das zwei Räder hat, auf dem man sitzt und mit den Beinen eine Art Zahnrad in Bewegung hält, das über eine Kette das Hinterrad antreibt",
-      "Haus": "ein Gebäude das in verschiedene Räume und Stockwerke aufgeteilt ist und das Menschen als Wohnung oder Arbeitsraum dient",
-      "Schwimmbad": "Gebäude oder Anlage im Freien mit Becken zum Baden und Schwimme"
-    }
+    "text": "<speak><say-as interpret-as=\"interjection\">bis bald</say-as></speak>"
+  },
+  "StopIntent": {
+    "utterances": [
+      "stop",
+      "halt",
+      "ausschalten",
+      "hör endlich auf",
+      "aufhören" 
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">bis bald</say-as></speak>"
+  },
+  "NoIntent": {
+    "utterances": [
+      "nein",
+      "nein danke",
+      "no",
+      "nope",
+      "eher nicht",
+      "eher nein",
+      "ich denke nicht",
+      "ich bin nicht einverstanden",
+      "kein interesse",
+      "eigentlich nicht"
+    ],
+    "textLeasingNo": "<speak><say-as interpret-as=\"interjection\">oje</say-as>. Sie können Kaufpreis, Eigenmittel, Laufzeit und Restwert anpassen. Sagen Sie zum Beispiel <s>restwert 44%</s> oder <s>laufzeit 3 jahre</s></speak>"
+  },
+  "YesIntent": {
+    "utterances": [
+      "ja",
+      "ja bitte",
+      "yes",
+      "ok",
+      "okay",
+      "jep",
+      "natürlich",
+      "klar",
+      "passt",
+      "bestätigen",
+      "einverstanden",
+      "das ist richtig",
+      "genau",
+      "klingt gut"
+    ],
+    "textLeasingYes": "<speak><say-as interpret-as=\"interjection\">super</say-as>! Ich habe einen Kurzlink für Sie erstellt und an Ihre Alexa App geschickt, mit dem Sie sich direkt ein Angebot für das eben berechnete Leasing anfordern können</speak>",
+    "cardTitle": "Leasingrechnen.at",
+    "cardContent": "{{response.text}} \n\nFordern Sie direkt ein Angebot an: {{response.url}}",
+    "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>"
+  },
+  "HelpIntent": {
+    "utterances": [
+      "hilfe",
+      "hilfe bitte",
+      "bitte hilfe",
+      "starte hilfe",
+      "hilf mir",
+      "hilf mir bitte",
+      "was kann ich sagen",
+      "kannst du mir helfen",
+      "kannst du mir bitte helfen",
+      "kannst du helfen",
+      "ich brauche deine hilfe",
+      "was",
+      "hä"
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">aber sicher</say-as>. Beginnen Sie, indem Sie mir den Kaufpreis für Ihr Fahrzeug sagen, zum Beispiel <s>preis 25000</s>. Sie können Eigenmittel, Laufzeit und Restwert anpassen, indem Sie beispielsweise <s>restwert 52%</s>, <s>eigenmittel 2000 euro</s> oder <s>laufzeit 3 jahre</s> sagen</speak>"
+  },
+
+  "RepeatIntent": {
+    "utterances": [
+      "wiederholen",
+      "wiederholung",
+      "nochmal",
+      "sag das nochmal",
+      "nochmals",
+      "sag das nochmals",
+      "wie bitte",
+      "wiederhol das"
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">oh oh</say-as>. Ich glaube ich habe noch nichts gesagt. Sagen Sie mir bitte den Kaufpreis für Ihr Auto</speak>"
+  },
+
+  "StartOverIntent": {
+    "utterances": [
+      "neustart",
+      "von vorne",
+      "neu beginnen",
+      "alles löschen",
+      "alles neu",
+      "neu starten",
+      "von vorne beginnen"
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">na klar</say-as>. Beginnen wir von vorne. Sagen Sie mir bitte den Kaufpreis für Ihr Auto</speak>"
+  },
+
+  "CalculateQuick": {
+    "utterances": [
+      "preis {price:Number} euro",
+      "preis {price:Number}",
+      "kaufpreis {price:Number} euro",
+      "kaufpreis {price:Number}",
+      "{price:Number} euro",
+      "{price:Number}",
+      "{price:Number} euro preis",
+      "{price:Number} preis",
+      "{price:Number} euro kaufpreis",
+      "{price:Number} kaufpreis",
+      "nach preis {price:Number} euro",
+      "nach preis {price:Number}",
+      "nach kaufpreis {price:Number} euro",
+      "nach kaufpreis {price:Number}",
+      "nach {price:Number} euro",
+      "nach {price:Number}",
+      "nach {price:Number} euro preis",
+      "nach {price:Number} preis",
+      "nach {price:Number} euro kaufpreis",
+      "nach {price:Number} kaufpreis",
+      "es kostet {price:Number} euro",
+      "es kostet {price:Number}"
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">alles klar</say-as>, {{slots.price}} also. {{response.text}} Ist das so in Ordnung?</speak>",
+    "errorInputMissing": "Können Sie mir bitte nochmals den Kaufpreis sagen?",
+    "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
+    "cardTitle": "Leasingrechnen.at",
+    "cardContent": "{{response.text}}"
+  },
+
+  "AdjustCapital": {
+    "utterances": [
+      "eigenmittel {capital:Number} euro",
+      "eigenkapital {capital:Number} euro",
+      "kapital {capital:Number} euro",
+      "kaution {capital:Number} euro",
+      "eigenmittel {capital:Number}",
+      "eigenkapital {capital:Number}",
+      "kapital {capital:Number}",
+      "kaution {capital:Number}",
+      "{capital:Number} euro eigenmittel",
+      "{capital:Number} euro eigenkapital",
+      "{capital:Number} euro kapital",
+      "{capital:Number} euro kaution",
+      "{capital:Number} eigenmittel",
+      "{capital:Number} eigenkapital",
+      "{capital:Number} kapital",
+      "{capital:Number} kaution"
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">voila</say-as>, {{slots.capital}} Eigenmittel. {{response.text}} Ist das so in Ordnung?</speak>",
+    "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
+    "errorNoPrice": "<speak><say-as interpret-as=\"interjection\">huch</say-as>, können Sie mir bitte zuerst den Kaufpreis sagen?</speak>",
+    "errorInputMissing": "Entschuldigen Sie, können Sie das bitte wiederholen?",
+    "cardTitle": "Leasingrechnen.at",
+    "cardContent": "{{response.text}}"
+  },
+
+  "AdjustTime": {
+    "utterances": [
+      "dauer {time:Duration}",
+      "laufzeit {time:Duration}",
+      "für {time:Duration}",
+      "leasingdauer {time:Duration}",
+      "{time:Duration}",
+      "{time:Duration} dauer",
+      "{time:Duration} laufzeit"
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">klar</say-as>, Laufzeit aktualisiert. {{response.text}} Sind Sie mit dem Ergebnis zufrieden?</speak>",
+    "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
+    "errorNoPrice": "<speak><say-as interpret-as=\"interjection\">huch</say-as>, können Sie mir bitte zuerst den Kaufpreis sagen?</speak>",
+    "errorInputMissing": "Entschuldigen Sie, können Sie das bitte wiederholen?",
+    "cardTitle": "Leasingrechnen.at",
+    "cardContent": "{{response.text}}"
+  },
+
+  "AdjustResidualPercent": {
+    "utterances": [
+      "restwert {residual:Number} prozent",
+      "{residual:Number} prozent restwert"
+    ],
+    "text": "<speak><say-as interpret-as=\"interjection\">jawohl</say-as>, Neuer Restwert. {{response.text}} Ist das OK?</speak>",
+    "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>",
+    "errorNoPrice": "<speak><say-as interpret-as=\"interjection\">huch</say-as>, können Sie mir bitte zuerst den Kaufpreis sagen?</speak>",
+    "errorInputMissing": "Entschuldigen Sie, können Sie das bitte wiederholen?",
+    "cardTitle": "Leasingrechnen.at",
+    "cardContent": "{{response.text}}"
   }
 }
