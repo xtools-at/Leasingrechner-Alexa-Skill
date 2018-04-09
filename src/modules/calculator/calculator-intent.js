@@ -1,11 +1,12 @@
 'use strict';
 
-const api = require('./calculator-service');
+const api = require('../calculator/calculator-service');
+const h = require('../helpers/helper');
 
 module.exports = app => {
 
   app.intent('CalculateQuick', (slots, attrs, data, done) => {
-    if (!slots.price || typeof slots.price == 'undefined') {
+    if (!slots.price || typeof slots.price == 'undefined' || slots.price === '?') {
         done({
           text: app.t('errorInputMissing'),
           end: false
@@ -15,22 +16,15 @@ module.exports = app => {
         let call = attrs.context || {};
         call.price = slots.price;
 
-        let newAttrs = attrs || {};
-
         // do call
         api.calculate(call, function (response) {
           if (response && !response.error) {
-            newAttrs.context = response;
-            newAttrs.lastPhrase = app.t('text', {slots, response});
             done({
               text: app.t('text', {slots, response}),
               end: false,
               ssml: true,
-              attrs: newAttrs,
-              card: {
-                title: app.t('cardTitle'),
-                content: app.t('cardContent', {response}),
-              }
+              attrs: h.getAttrs(attrs, app.t('text', {slots, response}), response),
+              card: h.getCard(app, response)
             });
           } else {
             done({
@@ -53,7 +47,7 @@ module.exports = app => {
       };
     }
 
-    if (!slots.capital || typeof slots.capital == 'undefined') {
+    if (!slots.capital || typeof slots.capital == 'undefined' || slots.capital === '?') {
         done({
           text: app.t('errorInputMissing'),
           end: false
@@ -63,22 +57,15 @@ module.exports = app => {
         let call = attrs.context || {};
         call.capital = slots.capital;
 
-        let newAttrs = attrs || {};
-
         // do call
         api.calculate(call, function (response) {
           if (response && !response.error) {
-            newAttrs.context = response;
-            newAttrs.lastPhrase = app.t('text', {slots, response});
             done({
               text: app.t('text', {slots, response}),
               ssml: true,
               end: false,
-              attrs: newAttrs,
-              card: {
-                title: app.t('cardTitle'),
-                content: app.t('cardContent', {response}),
-              }
+              attrs: h.getAttrs(attrs, app.t('text', {slots, response}), response),
+              card: h.getCard(app, response)
             });
           } else {
             done({
@@ -101,7 +88,7 @@ module.exports = app => {
       };
     }
 
-    if (!slots.time || typeof slots.time == 'undefined') {
+    if (!slots.time || typeof slots.time == 'undefined'  || slots.time === '?') {
         done({
           text: app.t('errorInputMissing'),
           end: false
@@ -111,22 +98,15 @@ module.exports = app => {
         let call = attrs.context || {};
         call.time = slots.time;
 
-        let newAttrs = attrs || {};
-
         // do call
         api.calculate(call, function (response) {
           if (response && !response.error) {
-            newAttrs.context = response;
-            newAttrs.lastPhrase = app.t('text', {slots, response});
             done({
               text: app.t('text', {slots, response}),
               ssml: true,
               end: false,
-              attrs: newAttrs,
-              card: {
-                title: app.t('cardTitle'),
-                content: app.t('cardContent', {response}),
-              }
+              attrs: h.getAttrs(attrs, app.t('text', {slots, response}), response),
+              card: h.getCard(app, response)
             });
           } else {
             done({
@@ -149,7 +129,7 @@ module.exports = app => {
       };
     }
 
-    if (!slots.residual || typeof slots.residual == 'undefined') {
+    if (!slots.residual || typeof slots.residual == 'undefined' || slots.residual === '?') {
         done({
           text: app.t('errorInputMissing'),
           end: false
@@ -159,22 +139,15 @@ module.exports = app => {
         let call = attrs.context || {};
         call.residual = slots.residual;
 
-        let newAttrs = attrs || {};
-
         // do call
         api.calculate(call, function (response) {
           if (response && !response.error) {
-            newAttrs.context = response;
-            newAttrs.lastPhrase = app.t('text', {slots, response});
             done({
               text: app.t('text', {slots, response}),
               ssml: true,
               end: false,
-              attrs: newAttrs,
-              card: {
-                title: app.t('cardTitle'),
-                content: app.t('cardContent', {response}),
-              }
+              attrs: h.getAttrs(attrs, app.t('text', {slots, response}), response),
+              card: h.getCard(app, response)
             });
           } else {
             done({

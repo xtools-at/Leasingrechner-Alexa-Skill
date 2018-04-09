@@ -1,15 +1,15 @@
 'use strict';
 
+const h = require('../helpers/helper');
+
 module.exports = app => {
 
   app.builtInIntent('help', (slots, attrs, data) => {
-    let newAttrs = attrs || {};
-    newAttrs.lastPhrase = app.t('text');
     return {
       ssml: true,
       text: app.t('text'),
       end: false,
-      attrs: newAttrs
+      attrs: h.getAttrs(attrs, app.t('text'))
     };
   });
 

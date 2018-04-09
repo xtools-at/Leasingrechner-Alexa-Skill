@@ -18,13 +18,8 @@ var calculate = (calcObject, callback) => {
       },
       function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            // console.log('No Error');
-            // console.log(response);
             return callback(body);
           } else {
-            // console.log('Error');
-            // console.log(error);
-            // console.log(response);
             return callback({error: true});
           }
       }

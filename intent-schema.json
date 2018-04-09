@@ -99,7 +99,29 @@
                     "slots": [],
                     "samples": [
                         "mehr hilfe",
-                        "mehr info"
+                        "mehr info",
+                        "erzähl mir mehr"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "hilfe",
+                        "hilfe bitte",
+                        "bitte hilfe",
+                        "starte hilfe",
+                        "hilf mir",
+                        "hilf mir bitte",
+                        "was kann ich sagen",
+                        "kannst du mir helfen",
+                        "kannst du mir bitte helfen",
+                        "kannst du helfen",
+                        "ich brauche deine hilfe",
+                        "was",
+                        "hä",
+                        "bedienungsanleitung",
+                        "bedienung",
+                        "wie geht das"
                     ]
                 },
                 {

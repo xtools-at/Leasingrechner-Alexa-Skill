@@ -1,6 +1,7 @@
 'use strict';
 
-const api = require('../calculator/calculator-service');
+// const api = require('../calculator/calculator-service');
+const h = require('../helpers/helper');
 const calculateIntents = ['CalculateQuick', 'AdjustTime', 'AdjustCapital', 'AdjustResidualPercent'];
 
 module.exports = app => {
@@ -23,13 +24,11 @@ module.exports = app => {
 
   app.builtInIntent('no', (slots, attrs, data) => {
     if (attrs.previousIntent && calculateIntents.indexOf(attrs.previousIntent) !== -1) {
-      let newAttrs = attrs || {};
-      newAttrs.lastPhrase = app.t('textLeasingNo');
       return {
         text: app.t('textLeasingNo'),
         ssml: true,
         end: false,
-        attrs: newAttrs
+        attrs: h.getAttrs(attrs, app.t('textLeasingNo'))
       };
     } else {
       return {
@@ -40,27 +39,21 @@ module.exports = app => {
   });
 
   app.builtInIntent('yes', (slots, attrs, data) => {
-    if (attrs.previousIntent && calculateIntents.indexOf(attrs.previousIntent) !== -1) {
-        // prepare call
+    if (attrs && attrs.previousIntent && calculateIntents.indexOf(attrs.previousIntent) !== -1) {
+      // Alexa Cards do not support Links, so there's no point in fetching it. For reference:
+      /*
+      // prepare call
       let call = attrs.context || {};
       call.link = true;
 
-      let newAttrs = attrs || {};
-      newAttrs.lastPhrase = app.t('textLeasingYes');
-
       // do call
       api.calculate(call, function (response) {
-        if (response) {
-          newAttrs.context = response;
+        if (response && !response.error) {
           done({
             text: app.t('textLeasingYes'),
             ssml: true,
             end: true,
-            attrs: newAttrs,
-            card: {
-              title: app.t('cardTitle'),
-              content: app.t('cardContent', {response})
-            }
+            card: h.getCard(app, response)
           });
         } else {
           done({
@@ -70,6 +63,13 @@ module.exports = app => {
           });
         }
       });
+      */
+
+      return {
+        text: app.t('textLeasingYes'),
+        ssml: true,
+        end: true
+      };
     } else {
       return {
         text: '',

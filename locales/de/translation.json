@@ -58,9 +58,9 @@
       "genau",
       "klingt gut"
     ],
-    "textLeasingYes": "<speak><say-as interpret-as=\"interjection\">super</say-as>! Ich habe einen Kurzlink für Sie erstellt und an Ihre Alexa App geschickt, mit dem Sie sich direkt ein Angebot für das eben berechnete Leasing auf Leasingrechnen <say-as interpret-as=\"spell-out\">.at</say-as> anfordern können</speak>",
+    "textLeasingYes": "<speak><say-as interpret-as=\"interjection\">super</say-as>. Sie können sich auf Leasingrechnen <say-as interpret-as=\"spell-out\">.at</say-as> direkt ein Angebot anfordern</speak>",
     "cardTitle": "Leasingrechnen.at",
-    "cardContent": "{{response.text}} \n\nFordern Sie direkt ein Angebot an: {{response.url}}",
+    "cardContent": "{{response.text}}",
     "error": "<speak><say-as interpret-as=\"interjection\">ähm</say-as>, da ist etwas schief gelaufen. Bitte versuchen Sie es nochmals</speak>"
   },
   "HelpIntent": {
@@ -77,17 +77,21 @@
       "kannst du helfen",
       "ich brauche deine hilfe",
       "was",
-      "hä"
+      "hä",
+      "bedienungsanleitung",
+      "bedienung",
+      "wie geht das"
     ],
-    "text": "<speak><say-as interpret-as=\"interjection\">aber sicher</say-as>. Beginnen Sie, indem Sie mir den Kaufpreis für Ihr Fahrzeug sagen, zum Beispiel <s>preis 25000</s>. Sie können Eigenmittel, Laufzeit und Restwert anpassen, indem Sie beispielsweise <s>restwert 52%</s>, <s>eigenmittel 2000 euro</s> oder <s>laufzeit 3 jahre</s> sagen. Sagen Sie jetzt den Kaufpreis Ihres Autos, oder <s>Mehr Hilfe</s></speak>"
+    "text": "<speak><say-as interpret-as=\"interjection\">aber sicher</say-as>. Beginnen Sie, indem Sie mir den Kaufpreis für Ihr Fahrzeug sagen, zum Beispiel <s>preis 25000</s>. Sie können Eigenmittel, Laufzeit und Restwert anpassen, indem Sie beispielsweise <s>restwert 52%</s>, <s>eigenmittel 2000 euro</s> oder <s>laufzeit 3 jahre</s> sagen. Sagen Sie jetzt den Kaufpreis Ihres Autos, oder <s>Mehr Info</s></speak>"
   },
 
   "MoreHelpIntent": {
     "utterances": [
       "mehr hilfe",
-      "mehr info"
+      "mehr info",
+      "erzähl mir mehr"
     ],
-    "text": "<speak>Sie können <s>Wiederholen</s> sagen, um den letzten Satz nochmals zu hören, oder <s>Neu starten</s> um ein neues Leasing zu berechnen. Alle Berechnungen sind auch in Ihrer Alexa App oder auf Ihrem Echo Show sichtbar. Der Leasingrechner Skill ist ein Service von www.leasingrechnen.at</speak>"
+    "text": "<speak>Sagen Sie <s>Wiederholen</s>, um den letzten Satz nochmals zu hören, oder <s>Neu starten</s> um ein neues Leasing zu berechnen. Alle Berechnungen sind auch in Ihrer Alexa App oder auf Ihrem Echo Show sichtbar. Der Leasingrechner Skill ist ein Service von www.leasingrechnen<say-as interpret-as=\"spell-out\">.at</say-as></speak>"
   },
 
   "RepeatIntent": {
